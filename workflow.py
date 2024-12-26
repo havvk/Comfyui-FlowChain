@@ -41,8 +41,8 @@ class AnyType(str):
 
 
 client_id = '5b49a023-b05a-4c53-8dc9-addc3a749911'
-server_address = "127.0.0.1:8188"
-
+#server_address = "127.0.0.1:8188"
+server_address = "127.0.0.1:6006"
 
 def _map_node_over_list(obj, input_data_all, func, allow_interrupt=False, execution_block_cb=None, pre_execute_cb=None):
     # check if node wants the lists
@@ -157,7 +157,8 @@ def get_input_data(inputs, class_def, unique_id, outputs=None, dynprompt=None, e
     missing_keys = {}
     for x in inputs:
         input_data = inputs[x]
-        input_type, input_category, input_info = get_input_info(class_def, x)
+        #input_type, input_category, input_info = get_input_info(class_def, x)
+        input_type, input_category, input_info = get_input_info(class_def, x, "default")
 
         def mark_missing():
             missing_keys[x] = True
