@@ -865,9 +865,9 @@ class Workflow(SaveImage):
         current_time = time.perf_counter()
         execution_time = current_time - execution_start_time
         logging.info("Prompt executed in {:.2f} seconds".format(execution_time))
-        comfy.model_management.unload_all_models()
+        #comfy.model_management.unload_all_models()
         del servers
-        gc.collect()
+        #gc.collect()
 
         output = []
         for id_node, node in workflow_outputs.items():
